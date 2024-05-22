@@ -45,7 +45,7 @@ jobs:
    needs: build
    environment: test
    env:
-     versionnr: ${{ jobs.build.outputs.verionnr }}
+     versionnr: ${{ needs.build.outputs.verionnr }}
    steps:
 
     - name: Check what the version is
