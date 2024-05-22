@@ -55,10 +55,12 @@ jobs:
    environment: test
    env:
      versionnr: ${{ needs.build.outputs.verionnr }}
+     GITHUB_SHORT_SHA12: ${GITHUB_SHA::12}
    steps:
 
     - name: Check what the version is
       run: |
         echo ${{ env.versionnr }}
         echo $GITHUB_RUN_ATTEMPT
+        echo $GITHUB_SHORT_SHA12
         
