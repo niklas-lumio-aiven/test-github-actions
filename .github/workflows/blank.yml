@@ -19,8 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       verionnr: ${{ steps.setup_version.outputs.version }}
-    env:
-      GITHUB_SHORT_SHA12: ${{ GITHUB_SHA::12 }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -44,6 +42,7 @@ jobs:
 
       - name: Echo version
         run: |
+         GITHUB_SHORT_SHA12=$(GITHUB_SHA:12)
          echo ${{ steps.setup_version.outputs.version }}
          echo jee
          echo ${{ github.event_name }}
