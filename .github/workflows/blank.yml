@@ -44,6 +44,7 @@ jobs:
         run: |
          echo ${{ steps.setup_version.outputs.version }}
          echo jee
+         echo ${{ github.event_name }}
 
   deploy:
    runs-on: ubuntu-latest
