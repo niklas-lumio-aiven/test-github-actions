@@ -42,13 +42,13 @@ jobs:
 
       - name: Echo version
         run: |
-         GITHUB_SHORT_SHA12=$(GITHUB_SHA:12)
          echo ${{ steps.setup_version.outputs.version }}
          echo jee
          echo ${{ github.event_name }}
          echo $GITHUB_RUN_ATTEMPT
          echo $(date -u -Is)
          printf 'version_number=%s%s\n' $(date -u -Is) ".g$GITHUB_SHA"
+         GITHUB_SHORT_SHA12=$(echo $GITHUB_SHA | cut -c 1-12)
          echo $GITHUB_SHORT_SHA12
 
   deploy:
