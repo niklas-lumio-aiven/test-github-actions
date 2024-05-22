@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       verionnr: ${{ steps.setup_version.outputs.version }}
+    env:
+      GITHUB_SHORT_SHA12: ${GITHUB_SHA::12}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -48,6 +50,7 @@ jobs:
          echo $GITHUB_RUN_ATTEMPT
          echo $(date -u -Is)
          printf 'version_number=%s%s\n' $(date -u -Is) ".g$GITHUB_SHA"
+         echo $GITHUB_SHORT_SHA12
 
   deploy:
    runs-on: ubuntu-latest
