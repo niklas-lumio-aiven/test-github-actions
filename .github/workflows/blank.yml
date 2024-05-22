@@ -38,7 +38,7 @@ jobs:
       - name: Setup version
         id: setup_version
         run: |
-          printf 'version=%s\n' "${date -u +%Y.%m}-$GITHUB_RUN_ATTEMPT.g$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+          printf 'version=%s%s\n' ${date -u +%Y.%m} "-$GITHUB_RUN_ATTEMPT.g$GITHUB_SHA" >> "$GITHUB_OUTPUT"
 
       - name: Echo version
         run: |
