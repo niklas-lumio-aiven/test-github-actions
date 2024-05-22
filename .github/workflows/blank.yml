@@ -45,6 +45,7 @@ jobs:
          echo ${{ steps.setup_version.outputs.version }}
          echo jee
          echo ${{ github.event_name }}
+         echo ${{ GITHUB_RUN_ATTEMPT }}
 
   deploy:
    runs-on: ubuntu-latest
@@ -57,4 +58,5 @@ jobs:
     - name: Check what the version is
       run: |
         echo ${{ env.versionnr }}
+        echo ${{ GITHUB_RUN_ATTEMPT }}
         
