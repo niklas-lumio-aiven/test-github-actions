@@ -46,7 +46,7 @@ jobs:
          echo jee
          echo ${{ github.event_name }}
          echo $GITHUB_RUN_ATTEMPT
-         echo $(date --iso-8601[=seconds])
+         echo $(date -u -Is)
 
   deploy:
    runs-on: ubuntu-latest
