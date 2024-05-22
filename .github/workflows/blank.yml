@@ -43,6 +43,7 @@ jobs:
       - name: Echo version
         run: |
          echo ${{ steps.setup_version.outputs.version }}
+         echo jee
 
   deploy:
    runs-on: ubuntu-latest
