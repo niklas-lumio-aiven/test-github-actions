@@ -35,7 +35,7 @@ jobs:
 
       - name: Setup version
         run: |
-          printf 'version=%s\n' "${date -u +%Y.%m}-${GITHUB_RUN_ATTEMPT}.g${GITHUB_SHA}" >> "$GITHUB_OUTPUT"
+          printf 'version=%s\n' "-$GITHUB_RUN_ATTEMPT.g$GITHUB_SHA" >> "$GITHUB_OUTPUT"
 
   deploy:
    runs-on: ubuntu-latest
