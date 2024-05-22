@@ -45,5 +45,5 @@ jobs:
 
     - name: Check what the version is
       run: |
-        echo ${jobs.build.outputs.version}
+        echo ${{ jobs.build.outputs.version }}
         
