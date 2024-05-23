@@ -39,6 +39,7 @@ jobs:
         id: setup_version
         run: |
           printf 'version=%s%s\n' $(date -u +%Y.%m.%H.%M) "-$GITHUB_RUN_NUMBER.g$GITHUB_SHA" >> "$GITHUB_OUTPUT"
+          echo ${{ steps.setup_version.outputs.version }} 
 
       - name: Echo version
         run: |
